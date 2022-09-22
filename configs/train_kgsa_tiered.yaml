@@ -1,0 +1,52 @@
+train_dataset: tiered-imagenet
+train_dataset_args: {root_path: /path/to/the/root/folder/, split: train}
+tval_dataset: tiered-imagenet
+tval_dataset_args: {root_path: /path/to/the/root/folder/, split: test}
+val_dataset: tiered-imagenet
+val_dataset_args: {root_path: /path/to/the/root/folder/, split: val}
+
+# Uncomment this to enable IRD, and comment the above configurations
+# train_dataset: tiered-imagenet
+# train_dataset_args: {root_path: /path/to/the/root/folder/, split: train, num_patch: 5}
+# tval_dataset: tiered-imagenet
+# tval_dataset_args: {root_path: /path/to/the/root/folder/, split: test, num_patch: 5}
+# val_dataset: tiered-imagenet
+# val_dataset_args: {root_path: /path/to/the/root/folder/, split: val, num_patch: 5}
+
+
+load_encoder: /path/to/saved/pre-trained/model.pth
+
+
+
+model: kgsa
+model_args: 
+    encoder: resnet12
+    encoder_args: {avg_pool: True}
+    temp: 15
+    temp_learnable: False
+    n_vecs: 3
+    n_hidden: 10
+    n_layer: 1
+    dropout: 0.5
+    
+
+freeze_bn: False
+
+batch_size: 100
+
+n_way: 5
+n_shot: 1
+n_query: 15
+train_batches: 100
+ep_per_batch: 2
+
+max_epoch: 100
+optimizer: sgd
+optimizer_args: {lr: 1.0e-4, weight_decay: 5.e-4, milestones: [100]}
+
+tensorboard_path: /path/to/the/root/folder/tensorboard/
+save_path: /path/to/the/root/folder/
+tolerance: 10
+seed: 100
+
+visualize_datasets: False

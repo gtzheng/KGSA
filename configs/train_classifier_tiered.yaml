@@ -1,0 +1,22 @@
+train_dataset: tiered-imagenet
+train_dataset_args: {root_path: /path/to/the/root/folder/, split: train, augment: augment}
+fs_dataset: tiered-imagenet
+fs_dataset_args: {root_path: /path/to/the/root/folder/, split: val}
+eval_fs_epoch: 20
+
+model: classifier
+model_args:
+    encoder: resnet12
+    encoder_args: {}
+    classifier: linear-classifier
+    classifier_args: {n_classes: 351}
+
+batch_size: 128
+max_epoch: 600
+optimizer: sgd
+optimizer_args: {lr: 0.1, weight_decay: 5.e-4, milestones: [400, 500, 550, 580]}
+
+save_epoch: 100
+visualize_datasets: False
+
+save_path: /path/to/the/root/folder/

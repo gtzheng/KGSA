@@ -1,0 +1,6 @@
+dataset: mini-imagenet
+dataset_args: {root_path: /path/to/the/root/folder/, split: test}
+result_path: /path/to/store/the/result
+exp_name: name_for_the_result_file
+seed: 0
+load: /path/to/saved-model.pth
