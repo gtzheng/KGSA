@@ -24,3 +24,15 @@ To train the KGSA on the miniImageNet and the tieredImageNet, run
 python train_kgsa.py --config configs/train_kgsa_mini.yaml
 python train_kgsa.py --config configs/train_kgsa_tiered.yaml
 ```
+## Citation
+```
+@inproceedings{zheng2022knowledge,
+  title={Knowledge-Guided Semantics Adjustment for Improved Few-Shot Classification},
+  author={Zheng, Guangtao and Zhang, Aidong},
+  booktitle={2022 IEEE International Conference on Data Mining (ICDM)},
+  pages={1347--1352},
+  year={2022},
+  organization={IEEE}
+}
+
+```
